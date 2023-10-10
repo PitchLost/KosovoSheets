@@ -1,4 +1,4 @@
-var orderSheet = spreadsheet.getSheetByName('Ordering')
+let orderSheet = spreadsheet.getSheetByName('Ordering')
 
 
 let oB2 = orderSheet.getRange('B2').getValue()
@@ -30,6 +30,15 @@ function placeOrder() {
 
 // Clear the Cells on the Ordering Section 
 
+
+
+
+
+
+
+ // Record Order
+
+}
 function clearOrderingCells() { 
     console.log('Setting values to Null')
 orderSheet.getRange('F2').setValue(null)
@@ -38,27 +47,5 @@ orderSheet.getRange('E2').setValue(null)
 orderSheet.getRange('B2').setValue(null)
 orderSheet.getRange('A2').setValue(null)
 orderSheet.getRange('D2').setValue(null)
-}
-
- // Record Order
-
-function recordOrder() {
-  // Get a reference to the "Orders" sheet
-  var OrdersSheet = spreadsheet.getSheetByName('Orders');
-  
-  // Get the values from the selling section
-  var oitemName = sheet.getRange('C2').getValue();
-  var oitemAmount = sheet.getRange('E2').getValue();
-  var ofullPrice = sheet.getRange('F2').getValue();
-  var oseller = sheet.getRange('B2').getValue();
-  var odateOfSale = sheet.getRange('A2').getValue();
-  var obuyer = sheet.getRange('D2').getValue();
-
-  // Append the values to the "Orders" sheet
-  OrdersSheet.appendRow([odateOfSale, oitemName, oitemAmount, ofullPrice,oseller, obuyer]);
-
-  // Clear the cells on the Ordering sheet
-  clearOrderingCells();
-}
 }
 

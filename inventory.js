@@ -1,8 +1,11 @@
+// Open the spreadsheet by providing the correct spreadsheet ID
+var spreadsheet = SpreadsheetApp.openById('1Voj09EpLh8ZGY2zAhq_MX1Cz5v_gE8HtT5Rr1DN6y9I');
 
-var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-  
-// Get the active sheet
-var invSheet = spreadsheet.getSheetByName('inventory');
+
+let invSheet = spreadsheet.getSheetByName("inventory")
+
+let activeSheet = SpreadsheetApp.getActiveSheet();
+
 
 
 // Function To display the gang fund in the correct cell

@@ -31,9 +31,38 @@ let sellerCell = B2;
 let dateOfSale = A2;
 let buyer = D2;
 
+
+// Function to record the order 
+
+function recordOrder() {
+  // Get a reference to the "Orders" sheet
+  var OrdersSheet = spreadsheet.getSheetByName('Orders');
+  
+  // Get the values from the selling section
+  var oitemName = sheet.getRange('C2').getValue();
+  var oitemAmount = sheet.getRange('E2').getValue();
+  var ofullPrice = sheet.getRange('F2').getValue();
+  var oseller = sheet.getRange('B2').getValue();
+  var odateOfSale = sheet.getRange('A2').getValue();
+  var obuyer = sheet.getRange('D2').getValue();
+
+  // Append the values to the "Orders" sheet
+  OrdersSheet.appendRow([odateOfSale, oitemName, oitemAmount, ofullPrice,oseller, obuyer]);
+
+  // Clear the cells on the Ordering sheet
+  clearOrderingCells();
+}
+
+
+
+
 // Function to Update Gang Fund
 
 function updateGangFund() { 
+
+// Call the Order Function
+placeOrder()
+
 
     // Increase the gang fund
 
